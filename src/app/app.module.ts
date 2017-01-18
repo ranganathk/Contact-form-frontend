@@ -2,7 +2,10 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import { ReactiveFormsModule } from '@angular/forms';
+import { SimpleNotificationsModule } from 'angular2-notifications';
 
+import { ContactService } from './app.service';
 import { AppComponent } from './app.component';
 
 @NgModule({
@@ -12,9 +15,11 @@ import { AppComponent } from './app.component';
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    ReactiveFormsModule,
+    SimpleNotificationsModule
   ],
-  providers: [],
+  providers: [ContactService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

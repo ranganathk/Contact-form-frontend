@@ -1,3 +1,19 @@
-<h1>
-  {{title}}
-</h1>
+<div class="container">
+  <h1>Contact Form</h1>
+  <div class="row">
+    <form [formGroup]="loginForm" (ngSubmit)="submitForm(loginForm)">
+      <div class="col s6">
+        <input formControlName="username" placeholder="Name">
+      </div>
+      <div class="col s6">
+        <input formControlName="email" type="email" placeholder="Email">
+      </div>
+      <div class="col s12">
+        <input formControlName="description" placeholder="Message">
+      </div>
+      <button class="waves-effect waves-light btn" type="submit"[disabled]="loginForm.invalid">Submit</button>
+    </form>
+    </div>
+</div>
+
+<simple-notifications ></simple-notifications>
